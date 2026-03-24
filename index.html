@@ -113,7 +113,7 @@
         <div id="game-view" class="view active">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                 <div style="display:flex; gap:15px; align-items:center;">
-                  
+                    <label style="display:flex; align-items:center; gap:8px; color:var(--text-sub); font-size:0.8rem; cursor:pointer;"><input type="checkbox" id="survival-mode" onchange="resetGame()"> SOBREVIVÊNCIA</label>
                     <label style="display:flex; align-items:center; gap:8px; color:var(--text-sub); font-size:0.8rem; cursor:pointer;"><input type="checkbox" id="sound-mode" checked> 🔊 SOM</label>
                 </div>
                 <div style="font-size: 0.7rem; color: var(--text-sub);">RANK: <span id="rank-name" style="color: var(--primary); font-weight: bold;">BRONZE</span></div>
@@ -181,7 +181,7 @@
             osc.start(); osc.stop(audioCtx.currentTime + 0.2);
         }
 
-        const defaultTexts = [];
+        const defaultTexts = ["Codigo limpo e poesia para a maquina.", "A velocidade e consequencia da precisao.", "Navegadores sao janelas para o infinito.", "A arena de codigo testa sua mente.", "Javascript move o ecossistema moderno."];
         let timer, survivalTimer, timeLeft = 30, survivalLife = 100, isTyping = false, charIdx = 0, mistakes = 0;
         const input = document.getElementById('input-field');
 
@@ -262,7 +262,7 @@
 
         function updateSurvival() {
             document.getElementById('survival-box').style.display = 'block';
-            survivalLife -= 2.0; 
+            survivalLife -= 1.2; 
             document.getElementById('survival-bar').style.width = survivalLife + '%';
             document.getElementById('typing-area').style.opacity = survivalLife / 100;
             if(survivalLife <= 0) finish("O texto desapareceu!");
