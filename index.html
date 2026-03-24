@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Conversor Papel Toalha</title>
+<style>
+body {
+   background-color: blue;
+   text-align: center;
+   color: White;
+}
+button {
+   background-color: green;
+   color: White;
+}
+</style>
+</head>
+<body>
+<p>Volume em M2</p><br>
+<input id="valor" type="number"><br>
+<button onclick="calcular()">Calcular</button>
+
+
+<script>
+
+function calcular() {
+   var volumePapelToalha = 0.01482;
+   var valorTexto = document.getElementById("valor").value;
+   
+   var valorReal = parseFloat(valorTexto);
+   var resultado = (valorReal/volumePapelToalha);
+   var resultadoTexto = resultado.toFixed(0);
+   alert(`Quantidade de papael toalha: ${resultadoTexto}`);
+     
+  
+  
+   
+
+
+}
+
+
+
+</script>
+
+
+</body>
+</html>
